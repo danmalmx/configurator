@@ -1,0 +1,20 @@
+﻿@model ConfigThis.NewFolder.ViewAll
+
+
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products</h2>
+
+<table class="table table-bordered table-hover">
+
+        @foreach (var prod in Model.Products)
+        {
+    <tr>
+        <td>@Html.ActionLink(@prod.Name, "Index", "Choices")</td>
+        <td>
+    </tr>
+        }
+</table>

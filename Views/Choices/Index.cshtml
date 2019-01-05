@@ -1,0 +1,34 @@
+﻿@model ConfigThis.NewFolder.ViewAll
+
+@{
+    ViewBag.Title = "Choices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Choices</h2>
+
+    <table class="table table-bordered table-hover">
+        <tbody>
+            @foreach (var param in Model.Parameters)
+            {
+                <tr>
+                    <td><strong>@param.Name</strong></td>
+                </tr>
+
+                @foreach (var name in Model.ParameterValues)
+                {
+                    @foreach (var item in name.ParameterId.ToString())
+                    {
+                        <tr>
+                            <td><input type="radio" id=@name.ParameterId name=@param.Name> @name.Name</td>
+                        </tr>
+                    }
+                }
+            }
+
+
+
+        </tbody>
+    </table>
